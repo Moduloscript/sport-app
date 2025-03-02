@@ -1,0 +1,48 @@
+Football Prediction App Documentation
+=====================================
+
+Tech Stack Overview:
+- Frontend: Next.js, shadcnUI, Tailwind CSS
+- Backend: Supabase, Cloudflare Workers, D1 Database
+- AI: Cloudflare AI Agents
+- State Management: TanStack Query, Zustand
+- Services: API-Football, OneSignal
+
+Implementation Plan:
+1. Project Initialization (5 days)
+2. Backend Configuration (7 days)
+3. Authentication System (5 days)
+4. Prediction Engine (10 days)
+5. Live Scores Integration (7 days)
+6. Design System (10 days)
+7. Core Pages Development (14 days)
+8. Notifications System (7 days)
+9. Admin Dashboard (10 days)
+10. Testing (7 days)
+11. Deployment (5 days)
+
+Project Structure:
+football-app/
+├── app/
+│   ├── (auth)/
+│   ├── (dashboard)/
+│   ├── api/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── ui/
+│   ├── prediction/
+│   └── scores/
+├── lib/
+│   ├── auth.ts
+│   ├── api.ts
+│   └── prediction.ts
+├── store/
+│   └── useStore.ts
+├── styles/
+│   └── globals.css
+├── public/
+│   └── images/
+├── .env.local
+├── next.config.js
+└── package.json
