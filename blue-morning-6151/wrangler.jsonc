@@ -3,18 +3,30 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "blue-morning-6151",
-	"compatibility_date": "2025-02-24",
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
-	"pages_build_output_dir": ".vercel/output/static",
-	"observability": {
-		"enabled": true
-	},
-	"main": "./workers/index.ts",
-	"routes": ["/api/news*"]
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blue-morning-6151",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-02-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "production": {
+      "vars": {
+        "NEWS_API_KEY": "your-api-key-here"
+      }
+    }
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "services": [
+    {
+      "binding": "SUPABASE",
+      "service": "supabase-client"
+    }
+  ]
   /**
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

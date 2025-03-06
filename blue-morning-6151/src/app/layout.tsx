@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SessionMonitor } from '@/components/session-monitor';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 import { Navbar } from "@/components/ui/navbar";
+import { SessionExpirationModal } from '@/components/session-expiration-modal';
 
 export default function RootLayout({
   children,
@@ -30,9 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <SessionMonitor />
         <main className="container mx-auto px-4 pt-4">
           {children}
         </main>
+        <SessionExpirationModal />
       </body>
     </html>
   );
